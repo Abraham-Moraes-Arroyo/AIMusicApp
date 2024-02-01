@@ -8,75 +8,75 @@
 import SwiftUI
 
 struct number2: View {
+    @State private var searchText = ""
+
     var body: some View {
-        ScrollView{
-            VStack{
-                VStack{
-                    Image("sp")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200)
-                }
-            
-                .offset(y:100)
-                
-//                this is for the number 2 screen
-                VStack{
-                    Text("Sex Pistols Never Mind the Bollocks")
-                        .bold()
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                }
-                .offset(y:100)
-                
-                VStack{
+        NavigationView {
+            ScrollView {
+                VStack {
+                    VStack {
+                        Image("sp")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200)
+                    }
+                    .offset(y: 100)
                     
-                    HStack{
-                        Image("sp")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                        
-                        
-                        Text("Holidays In the sun ")
-                        
+                    // This is for the number 2 screen
+                    VStack {
+                        Text("Sex Pistols Never Mind the Bollocks")
+                            .bold()
+                            .font(.title)
                     }
+                    .offset(y: 100)
                     
-                    HStack{
-                        Image("sp")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                        Text("No Feelings")
+                    VStack {
+                        HStack {
+                            Image("sp")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50, height: 50)
+                            
+                            Text("Holidays In the Sun")
+                        }
                         
-                    }
-                    HStack{
-                        Image("sp")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                        Text("Liar")
+                        HStack {
+                            Image("sp")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50, height: 50)
+                            Text("No Feelings")
+                        }
+                        HStack {
+                            Image("sp")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50, height: 50)
+                            Text("Liar")
+                        }
                         
+                        HStack {
+                            Image("sp")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50, height: 50)
+                            Text("Problems")
+                        }
                     }
-                    
-                    HStack{
-                        Image("sp")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                        Text("Problems")
-                        
-                    }
+                    .offset(x: -100)
+                    .offset(y: 100)
                 }
-                .offset(x:-100)
-                .offset(y: 100)
-                
-                
             }
+            .navigationTitle("AI Search")
+            .searchable(text: $searchText, placement: .navigationBarDrawer) // Enable search
         }
     }
 }
 
-#Preview {
-    number2()
+struct number2_Previews: PreviewProvider {
+    static var previews: some View {
+        number2()
+    }
 }
+
 

@@ -61,6 +61,8 @@ struct number1: View {
     }
 }
 
-#Preview {
-    number1()
+struct number1_Previews: PreviewProvider {
+    static var previews: some View {
+        number1()
+    }
 }
