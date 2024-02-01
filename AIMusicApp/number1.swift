@@ -8,55 +8,82 @@
 import SwiftUI
 
 struct number1: View {
+    @State private var searchTextRecc = ""
+
     var body: some View {
-        ScrollView{
-            ZStack{
-                VStack{
-                    HStack{
+        NavigationView {
+            ScrollView {
+                VStack {
+                    HStack {
                         Image(systemName: "info.circle")
-                        Text("Welcome back Abraham ")
+                        Text("Welcome back Abraham")
                             .font(.title)
                     }
-                    
-                    Text("Happy Sounds")
+
+                    Text("Favorites")
                         .bold()
-                        .offset(x: -90)
-                    
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 15)
+
+                    // Modified RoundedRectangle for Favorites
                     RoundedRectangle(cornerRadius: 4.0)
                         .stroke(Color.green)
                         .frame(width: 300, height: 100)
-                    
-                    Text("Feel Like you are in...")
-                        .offset(x: -60)
+                        .overlay(
+                            HStack(spacing: 4) {
+                                ForEach(0..<3) { _ in
+                                    Rectangle()
+                                        .fill(LinearGradient(gradient: Gradient(colors: [.red, .orange]), startPoint: .top, endPoint: .bottom))
+                                        .frame(width: 92, height: 92)
+                                        .cornerRadius(4)
+                                }
+                            }
+                        )
+
+                    Text("Moods")
                         .bold()
-                    
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 15)
+
+                    // Modified RoundedRectangle for Moods
                     RoundedRectangle(cornerRadius: 4.0)
                         .stroke(Color.green)
                         .frame(width: 300, height: 100)
-                    
-                    Text("Music In Belmont Cragin")
-                        .offset(x: -60)
+                        .overlay(
+                            HStack(spacing: 4) {
+                                ForEach(0..<3) { _ in
+                                    Rectangle()
+                                        .fill(LinearGradient(gradient: Gradient(colors: [.blue, .purple]), startPoint: .top, endPoint: .bottom))
+                                        .frame(width: 92, height: 92)
+                                        .cornerRadius(4)
+                                }
+                            }
+                        )
+
+                    Text("Popular In Belmont Cragin")
                         .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 15)
+
+                    // Modified RoundedRectangle for Popular
                     RoundedRectangle(cornerRadius: 4.0)
                         .stroke(Color.green)
                         .frame(width: 300, height: 100)
-                    
-                    
-                    
+                        .overlay(
+                            HStack(spacing: 4) {
+                                ForEach(0..<3) { _ in
+                                    Rectangle()
+                                        .fill(LinearGradient(gradient: Gradient(colors: [.green, .yellow]), startPoint: .top, endPoint: .bottom))
+                                        .frame(width: 92, height: 92)
+                                        .cornerRadius(4)
+                                }
+                            }
+                        )
                 }
-                
-                
-                VStack{
-                    Image("sp")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 70, height: 70)
-                    
-                }
-                .offset(x:-100)
-                .offset(y:30)
-                
+                .padding()
             }
+            .navigationTitle("Search to talk to AI DJ")
+            .searchable(text: $searchTextRecc, placement: .navigationBarDrawer) // Enable search
         }
     }
 }
