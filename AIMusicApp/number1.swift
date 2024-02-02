@@ -73,7 +73,27 @@ struct number1: View {
                             HStack(spacing: 4) {
                                 ForEach(0..<3) { _ in
                                     Rectangle()
-                                        .fill(LinearGradient(gradient: Gradient(colors: [.green, .yellow]), startPoint: .top, endPoint: .bottom))
+                                        .fill(LinearGradient(gradient: Gradient(colors: [.pink, .purple]), startPoint: .top, endPoint: .bottom))
+                                        .frame(width: 92, height: 92)
+                                        .cornerRadius(4)
+                                }
+                            }
+                        )
+                    
+                    Text("Activities")
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 15)
+
+                    // Modified RoundedRectangle for Popular
+                    RoundedRectangle(cornerRadius: 4.0)
+                        .stroke(Color.green)
+                        .frame(width: 300, height: 100)
+                        .overlay(
+                            HStack(spacing: 4) {
+                                ForEach(0..<3) { _ in
+                                    Rectangle()
+                                        .fill(LinearGradient(gradient: Gradient(colors: [.green, .blue]), startPoint: .top, endPoint: .bottom))
                                         .frame(width: 92, height: 92)
                                         .cornerRadius(4)
                                 }
