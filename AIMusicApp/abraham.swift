@@ -105,6 +105,30 @@ struct abraham: View {
         .offset(y:-90)
         
 //        list
+        VStack{
+            List{
+                HStack{
+                    HStack {
+                        RoundedRectangle(cornerRadius: 4.0)
+                            .stroke(Color.green)
+                            .overlay(Color(.gray))
+                            .frame(width: 50, height: 50)
+                        
+                        Text("Holidays In the Sun")
+                    }
+                }
+                HStack{
+                    HStack {
+                        RoundedRectangle(cornerRadius: 4.0)
+                            .stroke(Color.green)
+                            .overlay(Color(.gray))
+                            .frame(width: 50, height: 50)
+                        
+                        Text("Holidays In the Sun")
+                    }
+                }
+            }
+        }
       
         
 
