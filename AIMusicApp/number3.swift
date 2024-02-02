@@ -9,7 +9,8 @@ import SwiftUI
 
 struct number3: View {
     var body: some View {
-        
+        NavigationView{
+            
             VStack{
                 HStack{
                     Image("a")
@@ -18,11 +19,11 @@ struct number3: View {
                         .frame(width: 100, height: 100)
                         .cornerRadius(80)
                     
-                        
+                    
                     
                     Text("Abraham")
                         .font(.title)
-                        
+                    
                     
                 }
                 .offset(x:-5)
@@ -33,44 +34,42 @@ struct number3: View {
                         .font(.subheadline)
                     Text("Following:13")
                         .font(.subheadline)
-
+                    
                 }
                 .offset(y:10)
                 .offset(x:40)
                 
                 
                 VStack{
+                    
+                    //                    add a breack tag here so we can get more space
+                    
+                    
+                    
                     RoundedRectangle(cornerRadius: 4.0)
                         .stroke(Color.green)
                         .frame(width: 300, height: 100)
                     RoundedRectangle(cornerRadius: 4.0)
                         .stroke(Color.green)
                         .frame(width: 300, height: 100)
-                    RoundedRectangle(cornerRadius: 4.0)
-                        .stroke(Color.green)
-                        .frame(width: 300, height: 100)
-                    RoundedRectangle(cornerRadius: 4.0)
-                        .stroke(Color.green)
-                        .frame(width: 300, height: 100)
-                    RoundedRectangle(cornerRadius: 4.0)
-                        .stroke(Color.green)
-                        .frame(width: 300, height: 100)
+                    
                     
                 }
-                
-                HStack{
-                    Image("a")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
-                        .cornerRadius(80)
-                    
+                NavigationLink(destination: abraham()){
+                    HStack{
+                        Image("a")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100)
+                            .cornerRadius(80)
                         
-                    
-                    Text("Abraham")
-                        .font(.title)
                         
-                    
+                        
+                        Text("Abraham")
+                            .font(.title)
+                        
+                        
+                    }
                 }
                 .offset(y:-110)
                 HStack{
@@ -80,17 +79,17 @@ struct number3: View {
                         .frame(width: 100, height: 100)
                         .cornerRadius(80)
                     
-                        
+                    
                     
                     Text("Abraham")
                         .font(.title)
-                        
+                    
                     
                 }
-                .offset(y:10)
+                .offset(y:-350)
             }
         }
-    
+    }
 }
 
 struct number3_Previews: PreviewProvider {
